@@ -8,7 +8,7 @@ SebisSerialInterpreter ssi(&Serial);
 double position[] = {0,0,0};
 
 //Create a struct to store your temporary values properly
-struct TemmpVars {
+struct TempVars {
   double x;
   double y;
   double z;
@@ -17,7 +17,7 @@ struct TemmpVars {
   double f;
 };
 //Create a struct to store your functions properly
-struct TemmpFunctions {
+struct TempFunctions {
   FunctionList x;
   FunctionList y;
   FunctionList z;
@@ -26,8 +26,8 @@ struct TemmpFunctions {
   FunctionList f;
 };
 //Create a new struct var
-TemmpVars tvar = {0.0,0.0,0.0,-1,-1,0.0};
-TemmpFunctions tfunc = {0};
+TempVars tvar = {0.0,0.0,0.0,-1,-1,0.0};
+TempFunctions tfunc = {0};
 
 //Functions to store the values
 void setX(String code, double value) {tvar.x = value;}
