@@ -95,15 +95,13 @@ void SebisSerialInterpreter::serialRead(boolean endlessLoop)
         while (this->hSerial->available() <= 0 && endlessLoop);
             
         while (this->hSerial->available() > 0) {
-            this->codeToInterpret += (char)this->hSerial->read();
-        };
-        if (this->codeToInterpret.length() > 0 && this->hSerial->available() <= 0) {
-          char lastChar = this->codeToInterpret.charAt(this->codeToInterpret.length()-1);
-          if (lastChar == 13 || lastChar == 10) {
-            this->interpret();
-            this->finalFunction();
-          }
-        };
+            char c = (char)this->hSerial->read();
+            this->codeToInterpret += c;
+            if (c == 13 || c == 10) {
+              this->interpret();
+              this->finalFunction();
+            }
+        }
 
     } while (endlessLoop);
 }
