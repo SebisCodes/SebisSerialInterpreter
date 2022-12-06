@@ -1,0 +1,144 @@
+\hypertarget{class_sebis_serial_interpreter}{}\doxysection{Sebis\+Serial\+Interpreter Class Reference}
+\label{class_sebis_serial_interpreter}\index{SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sebis_serial_interpreter_a5d0f3a806b9b1b1a672e2a3a7e6a17a5}{Sebis\+Serial\+Interpreter}} (Hardware\+Serial $\ast$hardware\+Serial)
+\begin{DoxyCompactList}\small\item\em Construct a new Sebis Serial Interpreter\+:\+: Sebis Serial Interpreter object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_function_list}{Function\+List}} \mbox{\hyperlink{class_sebis_serial_interpreter_a513cbbefcbbb83cf7f73df14ec3826a2}{create\+Function\+List}} (String code, List\+Function func)
+\begin{DoxyCompactList}\small\item\em A funcion to add functions to this class which should be called if a code was found. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sebis_serial_interpreter_afe894826318f5316ed1581ddc73f1fb6}{add\+Function\+List}} (\mbox{\hyperlink{struct_function_list}{Function\+List}} $\ast$f\+New)
+\begin{DoxyCompactList}\small\item\em A funcion to add functions to this class which should be called if a code was found. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sebis_serial_interpreter_a959044cbcddf17aed5268bd2bf79a191}{remove\+Function\+List}} (String code)
+\begin{DoxyCompactList}\small\item\em A funcion to remove previously added functions out of this class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sebis_serial_interpreter_a5e69a6443da8793b65a31a05800f7766}{run\+Function}} (String code, double value)
+\begin{DoxyCompactList}\small\item\em A funcion to run functions which were stored added by a code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sebis_serial_interpreter_a785b212474d4b69cca1de49e7e72ab92}{set\+Final\+Function}} (Final\+Function func)
+\begin{DoxyCompactList}\small\item\em Set a function which is called if a new line was detected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sebis_serial_interpreter_a0ab63031eb66347fde51fa1b03a2720e}{serial\+Read}} (boolean endless\+Loop)
+\begin{DoxyCompactList}\small\item\em Read serial values and interpret them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_a5d0f3a806b9b1b1a672e2a3a7e6a17a5}\label{class_sebis_serial_interpreter_a5d0f3a806b9b1b1a672e2a3a7e6a17a5}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{SebisSerialInterpreter()}{SebisSerialInterpreter()}}
+{\footnotesize\ttfamily Sebis\+Serial\+Interpreter\+::\+Sebis\+Serial\+Interpreter (\begin{DoxyParamCaption}\item[{Hardware\+Serial $\ast$}]{hardware\+Serial }\end{DoxyParamCaption})}
+
+
+
+Construct a new Sebis Serial Interpreter\+:\+: Sebis Serial Interpreter object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hardware\+Serial} & Hardware\+Serial -\/ The serial input you want to use \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_afe894826318f5316ed1581ddc73f1fb6}\label{class_sebis_serial_interpreter_afe894826318f5316ed1581ddc73f1fb6}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!addFunctionList@{addFunctionList}}
+\index{addFunctionList@{addFunctionList}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{addFunctionList()}{addFunctionList()}}
+{\footnotesize\ttfamily void Sebis\+Serial\+Interpreter\+::add\+Function\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_function_list}{Function\+List}} $\ast$}]{f\+New }\end{DoxyParamCaption})}
+
+
+
+A funcion to add functions to this class which should be called if a code was found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & String -\/ If serial finds this code, your function will be called with the value \\
+\hline
+{\em function} & void -\/ A function you want to call if the defined code was found in your serial connection \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_a513cbbefcbbb83cf7f73df14ec3826a2}\label{class_sebis_serial_interpreter_a513cbbefcbbb83cf7f73df14ec3826a2}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!createFunctionList@{createFunctionList}}
+\index{createFunctionList@{createFunctionList}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{createFunctionList()}{createFunctionList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_function_list}{Function\+List}} Sebis\+Serial\+Interpreter\+::create\+Function\+List (\begin{DoxyParamCaption}\item[{String}]{code,  }\item[{List\+Function}]{func }\end{DoxyParamCaption})}
+
+
+
+A funcion to add functions to this class which should be called if a code was found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & String -\/ If serial finds this code, your function will be called with the value \\
+\hline
+{\em function} & void -\/ A function you want to call if the defined code was found in your serial connection \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_a959044cbcddf17aed5268bd2bf79a191}\label{class_sebis_serial_interpreter_a959044cbcddf17aed5268bd2bf79a191}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!removeFunctionList@{removeFunctionList}}
+\index{removeFunctionList@{removeFunctionList}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{removeFunctionList()}{removeFunctionList()}}
+{\footnotesize\ttfamily void Sebis\+Serial\+Interpreter\+::remove\+Function\+List (\begin{DoxyParamCaption}\item[{String}]{code }\end{DoxyParamCaption})}
+
+
+
+A funcion to remove previously added functions out of this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & String -\/ Remove all fnctions definded with this code \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_a5e69a6443da8793b65a31a05800f7766}\label{class_sebis_serial_interpreter_a5e69a6443da8793b65a31a05800f7766}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!runFunction@{runFunction}}
+\index{runFunction@{runFunction}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{runFunction()}{runFunction()}}
+{\footnotesize\ttfamily void Sebis\+Serial\+Interpreter\+::run\+Function (\begin{DoxyParamCaption}\item[{String}]{code,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+A funcion to run functions which were stored added by a code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & String -\/ If serial finds this code, your function will be called with the value \\
+\hline
+{\em double} & double -\/ The value which the interpreter interpreted \\
+\hline
+{\em function} & void -\/ A function you want to call if the defined code was found in your serial connection \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_a0ab63031eb66347fde51fa1b03a2720e}\label{class_sebis_serial_interpreter_a0ab63031eb66347fde51fa1b03a2720e}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!serialRead@{serialRead}}
+\index{serialRead@{serialRead}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{serialRead()}{serialRead()}}
+{\footnotesize\ttfamily void Sebis\+Serial\+Interpreter\+::serial\+Read (\begin{DoxyParamCaption}\item[{boolean}]{endless\+Loop }\end{DoxyParamCaption})}
+
+
+
+Read serial values and interpret them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em endless\+Loop} & boolean -\/ Run your program endless \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sebis_serial_interpreter_a785b212474d4b69cca1de49e7e72ab92}\label{class_sebis_serial_interpreter_a785b212474d4b69cca1de49e7e72ab92}} 
+\index{SebisSerialInterpreter@{SebisSerialInterpreter}!setFinalFunction@{setFinalFunction}}
+\index{setFinalFunction@{setFinalFunction}!SebisSerialInterpreter@{SebisSerialInterpreter}}
+\doxysubsubsection{\texorpdfstring{setFinalFunction()}{setFinalFunction()}}
+{\footnotesize\ttfamily void Sebis\+Serial\+Interpreter\+::set\+Final\+Function (\begin{DoxyParamCaption}\item[{Final\+Function}]{func }\end{DoxyParamCaption})}
+
+
+
+Set a function which is called if a new line was detected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Final\+Function} & (void $\ast$)() -\/ A function which should be called if a new line was detected \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Sebis\+Serial\+Interpreter.\+h\item 
+src/Sebis\+Serial\+Interpreter.\+cpp\end{DoxyCompactItemize}
