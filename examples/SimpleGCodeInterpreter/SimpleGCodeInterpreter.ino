@@ -114,7 +114,7 @@ void setup() {
   Serial.println("Please make sure you use a new line after sending your codes!");
 
   //Get and interpret g-codes
-  ssi.serialRead(true,true);
+  ssi.serialRead(true, true);
 }
 
 void loop() {
