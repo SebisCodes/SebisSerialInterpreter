@@ -103,7 +103,7 @@ void SebisSerialInterpreter::serialRead(boolean endlessLoop, boolean blockingBeh
                   this->interpret();
                   this->finalFunction();
                 }
-            } while (this->hSerial->available() > 0 && blockingRead);
+            } while (this->hSerial->available() > 0 && blockingBehavior);
         }
 
     } while (endlessLoop);
