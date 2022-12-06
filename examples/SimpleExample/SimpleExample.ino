@@ -28,9 +28,9 @@ void setup() {
   Serial.println("Please make sure you use a new line after sending your codes!");
   Serial.println("Type for example \"MGC100 MGC22.5\" in the serial monitor...");
   
-  ssi.serialRead(true); //Get and interpret g-codes - comment this line to run functions in loop
+  ssi.serialRead(true, true); //Get and interpret g-codes - comment this line to run functions in loop
 }
 
 void loop() {
-  //ssi.serialRead(false); //uncomment this line to run loop while reading codes
+  //ssi.serialRead(false, false); //uncomment this line to run loop while reading codes
 }
