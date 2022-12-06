@@ -89,18 +89,20 @@ void SebisSerialInterpreter::runFunction(String code, double value)
  * 
  * @param endlessLoop boolean - Run your program endless
  */
-void SebisSerialInterpreter::serialRead(boolean endlessLoop)
+void SebisSerialInterpreter::serialRead(boolean endlessLoop, boolean blockingRead)
 {
     do {
         while (this->hSerial->available() <= 0 && endlessLoop);
-            
-        while (this->hSerial->available() > 0) {
-            char c = (char)this->hSerial->read();
-            this->codeToInterpret += c;
-            if (c == 13 || c == 10) {
-              this->interpret();
-              this->finalFunction();
-            }
+        
+        if (this->hSerial->available() > 0) {
+            do {
+                char c = (char)this->hSerial->read();
+                this->codeToInterpret += c;
+                if (c == 13 || c == 10) {
+                  this->interpret();
+                  this->finalFunction();
+                }
+            } while (this->hSerial->available() > 0 && blockingRead);
         }
 
     } while (endlessLoop);
