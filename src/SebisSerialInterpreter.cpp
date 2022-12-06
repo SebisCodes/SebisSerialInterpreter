@@ -88,9 +88,9 @@ void SebisSerialInterpreter::runFunction(String code, double value)
  * @brief Read serial values and interpret them
  * 
  * @param endlessLoop boolean - Run your program endless
- * @param blockingRead boolean - Enable or disable blocking behavior while reading from serial
+ * @param blockingBehavior boolean - Enable or disable blocking behavior while reading from serial
  */
-void SebisSerialInterpreter::serialRead(boolean endlessLoop, boolean blockingRead)
+void SebisSerialInterpreter::serialRead(boolean endlessLoop, boolean blockingBehavior)
 {
     do {
         while (this->hSerial->available() <= 0 && endlessLoop);
