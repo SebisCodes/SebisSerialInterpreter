@@ -27,7 +27,7 @@ class SebisSerialInterpreter {
     void removeFunctionList(String code);
     void runFunction(String code, double value);
     void setFinalFunction(FinalFunction func);
-    void serialRead(boolean endlessLoop, boolean blockingRead);
+    void serialRead(boolean endlessLoop, boolean blockingBehavior);
 
   private:
     void interpret();
