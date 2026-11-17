@@ -55,7 +55,7 @@ class SebisSerialInterpreter {
   public:
     /**
      * @brief Creates an interpreter.
-     * @param stream Any Arduino Stream, e.g. @c &Serial or a SoftwareSerial.
+     * @param stream A Stream, e.g. @c &Serial.
      */
     SebisSerialInterpreter(Stream *stream);
 
