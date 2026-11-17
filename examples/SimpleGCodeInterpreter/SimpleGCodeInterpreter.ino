@@ -1,13 +1,12 @@
 #include <math.h>
 #include <SebisSerialInterpreter.h>
 
-//Define and call the constructor
 SebisSerialInterpreter ssi(&Serial);
 
-//The local position of your machine
+//Position of the machine; G0 adds the values of a line
 double position[] = {0,0,0};
 
-//Create a struct to store your temporary values properly
+//Values collected from the current line
 struct TempVars {
   double x;
   double y;
@@ -16,20 +15,8 @@ struct TempVars {
   int m;
   double f;
 };
-//Create a struct to store your functions properly
-struct TempFunctions {
-  FunctionList x;
-  FunctionList y;
-  FunctionList z;
-  FunctionList g;
-  FunctionList m;
-  FunctionList f;
-};
-//Create a new struct var
 TempVars tvar = {0.0,0.0,0.0,-1,-1,0.0};
-TempFunctions tfunc = {0};
 
-//Functions to store the values
 void setX(String code, double value) {tvar.x = value;}
 void setY(String code, double value) {tvar.y = value;}
 void setZ(String code, double value) {tvar.z = value;}
@@ -37,7 +24,7 @@ void setG(String code, double value) {tvar.g = round(value);}
 void setM(String code, double value) {tvar.m = round(value);}
 void setF(String code, double value) {tvar.f = value;}
 
-//A function which should be called if the line is finished
+//Runs the collected command after the line ends
 void runFinal() {
   if (tvar.g >= 0) {
     switch(tvar.g) {
@@ -56,7 +43,6 @@ void runFinal() {
         break;
       case 2:
         break;
-      //case ...:
     }  
   } else if(tvar.m >= 0){
     switch(tvar.m) {
@@ -66,13 +52,12 @@ void runFinal() {
         break;
       case 2:
         break;
-      //case ...:
     }  
   }
   resetValues();  
 }
 
-//Reset all values to run a new g-code line
+//Resets the values for the next line; -1 means no G or M code
 void resetValues() {
   setX("",0);
   setY("",0);
@@ -82,7 +67,7 @@ void resetValues() {
   setF("",0);
 }
 
-//Define FunctionList vars - MUST be global!
+//Must stay alive while registered: global or static
 FunctionList fSetX;
 FunctionList fSetY;
 FunctionList fSetZ;
@@ -93,30 +78,26 @@ FunctionList fSetF;
 
 void setup() {
   Serial.begin(115200);
-  //initialize all FunctionList vars
   fSetX =  ssi.createFunctionList("X", &setX);
   fSetY =  ssi.createFunctionList("Y", &setY);
   fSetZ =  ssi.createFunctionList("Z", &setZ);
   fSetG =  ssi.createFunctionList("G", &setG);
   fSetM =  ssi.createFunctionList("M", &setM);
   fSetF =  ssi.createFunctionList("F", &setF);
-  //add your functions to ssi class
   ssi.addFunctionList(&fSetX);
   ssi.addFunctionList(&fSetY);
   ssi.addFunctionList(&fSetZ);
   ssi.addFunctionList(&fSetG);
   ssi.addFunctionList(&fSetM);
   ssi.addFunctionList(&fSetF);
-  //define your function which should be called if a new line was detected
   ssi.setFinalFunction(&runFinal);
   
   Serial.println("Setup is finished!");
   Serial.println("Please make sure you use a new line after sending your codes!");
 
-  //Get and interpret g-codes
-  ssi.serialRead(true, true);
+  ssi.serialRead(true, true); //Never returns
 }
 
 void loop() {
-  //Not needed if ssi.serialRead() was called with true in setup
+  //Not used: serialRead(true, true) in setup() never returns
 }

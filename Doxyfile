@@ -1,0 +1,13 @@
+# Run "doxygen" here to generate docs/html.
+PROJECT_NAME           = SebisSerialInterpreter
+PROJECT_NUMBER         = 2.0.1
+PROJECT_BRIEF          = "Calls your functions for letter/number codes read from a Stream"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = README.md src/SebisSerialInterpreter.h
+USE_MDFILE_AS_MAINPAGE = README.md
+EXCLUDE_SYMBOLS        = SEBISSERIALINTERPRETER_H FunctionListPtr
+GENERATE_LATEX         = NO
+SEARCHENGINE           = NO
+HAVE_DOT               = NO
+QUIET                  = YES
+WARN_NO_PARAMDOC       = YES
